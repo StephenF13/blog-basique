@@ -1,0 +1,45 @@
+@charset "UTF-8";
+
+
+body {
+    font-family: sans-serif;
+}
+
+nav
+{
+    /* structure */
+    height: 128px;
+    margin-bottom: 2em;
+
+    /* presentation */
+    background-color: #2F2933;
+    border-bottom: 6px solid #01A2A6;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.container {
+    padding: 1em 0 1em 0;
+}
+
+.blog-post h1 {
+    margin-bottom: 0;
+}
+
+.blog-post article {
+    margin-top: 1em;
+}
+
+.comments ul {
+    list-style-type: none;
+}
+
+.comments h4 {
+    font-size: 0.9em;
+}
+
+.comments li {
+    margin-bottom: 1em;
+}
