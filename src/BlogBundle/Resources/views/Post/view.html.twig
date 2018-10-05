@@ -1,0 +1,62 @@
+{% extends "BlogBundle::layout.html.twig" %}
+
+{% block title %}
+    Lecture d'un article - {{ parent() }}
+{% endblock %}
+
+
+{% block main %}
+
+    <div class="container">
+
+        <div class="row">
+            <!-- Colonne de listing des articles -->
+            <div class="col-md-12">
+
+                <!-- Article de Blog -->
+                <section class="blog-post card mb-4">
+                    <div class="card-body">
+                        <h1 class="card-title">{{ post.title }} </h1>
+                        <small class="text-muted">
+                            Rédigé par {{ post.author.fullName }}
+                            le {{ post.publishedAt|date('d/m/y') }}
+                        </small>
+                        <article>
+                            {{ post.content|nl2br }}
+                        </article>
+                    </div>
+                </section>
+
+                <hr>
+
+                <section class="comments card mb-4">
+                    <div class="card-body">
+                        <h3><i class="fa fa-comments"></i> Commentaires</h3>
+                        <!-- Liste des commentaires de l'article du blog -->
+                        <ul>
+                            {% for comment in post.comments %}
+                                <li>
+                                    <h4 class="text-muted">
+                                        <i class="fa fa-comment"></i>
+                                        Rédigé par {{ comment.author.fullName }}
+                                        le {{ comment.publishedAt|date('d/m/y') }}
+                                    </h4>
+                                    <article>{{ comment.content|nl2br }}</article>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <hr>
+
+                       {#Formulaire pour commentaire ici #}
+
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+        <!-- /.row -->
+
+    </div>
+{% endblock %}

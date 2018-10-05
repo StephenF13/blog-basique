@@ -2,6 +2,8 @@
 
 namespace BlogBundle\Repository;
 
+use Doctrine\ORM\EntityRepository;
+
 /**
  * PostRepository
  *
@@ -10,4 +12,5 @@ namespace BlogBundle\Repository;
  */
 class PostRepository extends \Doctrine\ORM\EntityRepository
 {
+
 }

@@ -1,3 +1,26 @@
 blog_homepage:
     path:     /
     defaults: { _controller: BlogBundle:Post:index }
+
+blog_view:
+    path:      /post/{id}
+    defaults:
+        _controller: BlogBundle:Post:view
+    requirements:
+        id: \d+
+
+blog_add:
+    path:      /add
+    defaults:
+        _controller: BlogBundle:Post:addPost
+
+login:
+    path: /login
+    defaults:
+        _controller: BlogBundle:Security:login
+
+login_check:
+    path: /login_check
+
+logout:
+    path: /logout

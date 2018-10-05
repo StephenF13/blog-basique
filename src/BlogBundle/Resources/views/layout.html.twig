@@ -32,8 +32,14 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('blog_homepage') }}"> Accueil
-                    </a>
+                    <a class="nav-link" href="{{ path('blog_homepage') }}"> Accueil </a>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <a class="nav-link" href="{{ path('logout') }}">Déconnexion</a>
+                        <a class="nav-link" href="{{ path('blog_add') }}">Ajouter un article</a>
+                    {% else %}
+                        <a class="nav-link" href="{{ path('login') }}">Connexion</a>
+                    {% endif %}
+
                 </li>
             </ul>
         </div>
